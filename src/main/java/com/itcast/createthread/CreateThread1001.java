@@ -1,5 +1,9 @@
 package com.itcast.createthread;
 
+import jdk.nashorn.internal.ir.ReturnNode;
+import lombok.extern.slf4j.Slf4j;
+
+import java.security.PublicKey;
 import java.util.concurrent.*;
 
 /**
@@ -10,6 +14,7 @@ import java.util.concurrent.*;
  * CreateTime ==> 2023-03-02 19:46:50
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
+@Slf4j(topic = "c.haha")
 public class CreateThread1001 {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
 
@@ -26,25 +31,69 @@ public class CreateThread1001 {
 //        System.out.println(futureTask.get());
 
 //        new Thread(new FutureTask<Object>(new T3())).start();
+//
+//        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//
+//        executorService.submit(()->{
+//            System.out.println("T41...");
+//        });
+//
+//        executorService.submit(()->{
+//            System.out.println("T42...");
+//        });
+//
+//        executorService.submit(()->{
+//            System.out.println("T43...");
+//        });
+//
+//        executorService.shutdown();
 
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//        T4 t4 = new T4();
+//
+//        new Thread(t4::eat).start();
+//
+//        new Thread(()->{
+//            System.out.println(">>>");
+//        }).start();
 
-        executorService.submit(()->{
-            System.out.println("T41...");
-        });
+//
+//        new Thread(){
+//            public void run(){
+//
+//            }
+//        }.start();
+//
 
-        executorService.submit(()->{
-            System.out.println("T42...");
-        });
 
-        executorService.submit(()->{
-            System.out.println("T43...");
-        });
+//        Runnable t5 = ()->log.debug("Java8简化...");
 
-        executorService.shutdown();
+//        Callable c1 = ()-> {
+//            log.debug("KK--");
+//            return "KK";
+//        };
+//
+//        FutureTask<Object> futureTask = new FutureTask<Object>(c1);
+
+
+//        new Thread(futureTask,"T5").start();
+
+
+
+
+
+
+
     }
 }
 
+
+class T4{
+    public  void eat(){
+        System.out.println("吃的!吃的!!吃的!!!");
+        System.out.println("吃的!吃的!!吃的!!!");
+        System.out.println("吃的!吃的!!吃的!!!");
+    }
+}
 
 class T3 implements Callable {
 
