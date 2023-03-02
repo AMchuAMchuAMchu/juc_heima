@@ -1,10 +1,9 @@
 package com.itcast.createthread;
 
-import jdk.nashorn.internal.ir.ReturnNode;
 import lombok.extern.slf4j.Slf4j;
 
-import java.security.PublicKey;
-import java.util.concurrent.*;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Description ==> TODO
@@ -77,10 +76,9 @@ public class CreateThread1001 {
 
 //        new Thread(futureTask,"T5").start();
 
-
-
-
-
+        new Thread(() -> {
+            System.out.println("O(∩_∩)O~呵呵");
+        }, "T1").start();
 
 
     }
