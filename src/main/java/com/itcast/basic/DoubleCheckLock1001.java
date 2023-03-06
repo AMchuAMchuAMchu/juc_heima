@@ -26,6 +26,7 @@ public class DoubleCheckLock1001 {
         long end = System.currentTimeMillis();
 
         System.out.println("耗时:" + (end - start));//1544  1522  1513
+        System.out.println("耗时:" + (end - start));//3  3  3
 
     }
 
@@ -35,9 +36,20 @@ class DCL {
 
     private Object object;
 
-    public synchronized Object getInstance() {
+//    public synchronized Object getInstance() {
+//        if (object == null) {
+//            object = new Object();
+//        }
+//        return object;
+//    }
+
+    public Object getInstance() {
         if (object == null) {
-            return new Object();
+            synchronized (DCL.class) {
+                if (object == null) {
+                    object = new Object();
+                }
+            }
         }
         return object;
     }
