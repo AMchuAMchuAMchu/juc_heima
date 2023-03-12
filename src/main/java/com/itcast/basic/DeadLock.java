@@ -14,6 +14,8 @@ public class DeadLock {
     public static void main(String[] args) {
 
         Object o01 = new Object();
+
+
         Object o02 = new Object();
 
         new Thread(()->{
